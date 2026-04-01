@@ -1,16 +1,16 @@
+import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { Image, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
-
 export default function Explore() {
 
   const router = useRouter();
 
   const categories = [
     { id:1, name:'Fresh Fruit', image:require('../assets/images/8.jpg') },
-    { id:2, name:'Cooking Oil', image:require('../assets/images/9.jpg') },
-    { id:3, name:'Meat & Fish', image:require('../assets/images/5.jpg') },
+    { id:2, name:'Cooking Oil', image:require('../assets/images/9.png') },
+    { id:3, name:'Meat & Fish', image:require('../assets/images/trung.png') },
     { id:4, name:'Bakery & Snack', image:require('../assets/images/banhmi.png') },
-    { id:5, name:'Dairy', image:require('../assets/images/11.jpg') },
+    { id:5, name:'Dairy', image:require('../assets/images/sua.png') },
     { id:6, name:'Beverages', image:require('../assets/images/12.jpg') },
   ];
 
@@ -21,22 +21,38 @@ export default function Explore() {
       <Text style={{
         fontSize:20,
         fontWeight:'bold',
-        margin:15
+        margin:15,
+        textAlign:'center',
+        marginBottom:0
       }}>
         Find Products
       </Text>
 
       {/* SEARCH */}
-      <View style={{ paddingHorizontal:15 }}>
-        <TextInput
-          placeholder="Search Store"
-          style={{
-            backgroundColor:'#f2f2f2',
-            padding:15,
-            borderRadius:15
-          }}
-        />
-      </View>
+<View style={{ padding:15 }}>
+  <View
+    style={{
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#f2f2f2',
+      borderRadius: 15,
+      paddingHorizontal: 15
+    }}
+  >
+    {/* ICON */}
+    <Ionicons name="search" size={20} color="#999" />
+
+    {/* INPUT */}
+    <TextInput
+      placeholder="Search Store"
+      style={{
+        flex: 1,
+        padding: 12,
+        marginLeft: 10
+      }}
+    />
+  </View>
+</View>
 
       {/* GRID */}
       <View style={{
@@ -69,7 +85,8 @@ export default function Explore() {
               source={item.image}
               style={{
                 width:80,
-                height:80
+                height:80,
+                 resizeMode: "contain"
               }}
             />
 

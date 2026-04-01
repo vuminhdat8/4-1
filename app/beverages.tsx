@@ -55,7 +55,8 @@ export default function Beverages() {
               style={{
                 width:110,
                 height:110,
-                alignSelf:'center'
+                alignSelf:'center',
+                resizeMode:'contain'
               }}
             />
 
